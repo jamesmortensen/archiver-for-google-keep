@@ -27,6 +27,8 @@ A Google Chrome or Chromium browser will launch.
 
 On the first run, you'll need to login to Google Keep with your credentials. Afterwards, the credentials are cached in the `devtools-data-dir` Chrome profile. 
 
+<img width="1198" alt="sign-into-google-account" src="https://user-images.githubusercontent.com/1315816/191806069-64e47217-70ea-4a6c-9740-cc9ba7c5fd71.png">
+
 After logging in, as well as on subsequent runs, go back to the terminal, and you'll see a prompt:
 
 >     ATTENTION: Please follow these steps to export/backup your data
