@@ -30,6 +30,8 @@ if(fs.existsSync('./output'))
 
 async function initializeBrowser() {
     const KEEP_DATA_DIR = process.env.KEEP_DATA_DIR || `${process.cwd()}/devtools-data-dir`;
+    if(!fs.existsSync(KEEP_DATA_DIR))
+        fs.mkdirSync(KEEP_DATA_DIR);
     return await remote({
         logLevel: 'trace',
         capabilities: {
