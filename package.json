@@ -1,0 +1,29 @@
+{
+  "name": "archiver-for-google-keep",
+  "version": "0.0.1",
+  "description": "Scrapes notes and checklists from Google Keep™ and writes them out as JSON and markdown archive/backup files. This tool is not affiliated or endorsed by Google™. Google Keep™ is a trademark of Google.",
+  "main": "keep.js",
+  "scripts": {
+    "start": "node keep.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "google keep",
+    "keep",
+    "archive",
+    "backup",
+    "scrape",
+    "webdriverio"
+  ],
+  "author": "James Mortensen",
+  "license": "MIT",
+  "homepage": "https://github.com/jamesmortensen/archiver-for-google-keep/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesmortensen/archiver-for-google-keep.git"
+  },
+  "dependencies": {
+    "prompt": "^1.3.0",
+    "webdriverio": "^7.24.1"
+  }
+}
