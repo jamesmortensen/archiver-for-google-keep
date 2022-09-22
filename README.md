@@ -27,14 +27,14 @@ A Google Chrome or Chromium browser will launch.
 
 On the first run, you'll need to login to Google Keep with your credentials. Afterwards, the credentials are cached in the `devtools-data-dir` Chrome profile. 
 
-<img width="1198" alt="sign-into-google-account" src="https://user-images.githubusercontent.com/1315816/191806069-64e47217-70ea-4a6c-9740-cc9ba7c5fd71.png">
+<img width="400" alt="sign-into-google-account" src="https://user-images.githubusercontent.com/1315816/191806069-64e47217-70ea-4a6c-9740-cc9ba7c5fd71.png">
 
 After logging in, as well as on subsequent runs, go back to the terminal, and you'll see a prompt:
 
->     ATTENTION: Please follow these steps to export/backup your data
-    1. Login to Google Keep
-    2. Click on the label you wish to backup.
-    3. Press ENTER to start the backup (or press 'q' to quit).
+>      ATTENTION: Please follow these steps to export/backup your data
+>    1. Login to Google Keep
+>    2. Click on the label you wish to backup.
+>    3. Press ENTER to start the backup (or press 'q' to quit).
 > 
 > prompt: Continue with the backup? (Press ENTER):
 
@@ -53,7 +53,28 @@ Once all of the content is loaded, the system will select each card individually
 - isPinned
 - color
 
-The extracted information is then written to JSON and markdown files in the `./output` folder. Once completed, rename the `/output` folder and move it to a safe place. For example:
+The extracted information is then written to JSON and markdown files in the `./output` folder. Here's an example:
+
+**scrummaster-initiatives.md**
+```
+---
+title: "ScrumMaster initiatives"
+lastEditedTime: Edited Jan 6, 2019
+createdTime: Created Jan 6, 2019
+labels: Ideas,Scrum
+isPinned: false
+color: rgb(255, 255, 255)
+keepUrl: https://keep.google.com/#LIST/<redacted>
+---
+
+- [ ] Scrummaster podcast.  
+- [ ] Topic: what tools do you use as a ScrumMaster?
+- [ ] Guest facilitator - SM from a team which facilitated retro for another team.
+- [ ] What ideas do our scrummasters have or experiments to try? What is an experiment you did in 2018?
+
+```
+
+Once the archive is completed, rename the `/output` folder and move it to a safe place. For example:
 
 ```bash
 $ mv output ~/Documents/my-keep-backup
