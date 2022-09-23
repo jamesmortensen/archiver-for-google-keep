@@ -11,17 +11,20 @@ Unbeknownst to many, WebdriverIO can connect to Chrome or Chromium without a Web
 
 ## Getting Started
 
-Clone the project and then install node_modules:
+For best results, install the application as a global npm module:
 
 ```bash
-$ npm install
+$ npm i archiver-for-google-keep -g
 ```
 
-To run:
+To run the application, run the following command:
 
 ```bash
-$ npm start
+$ keep-archiver
 ```
+
+NOTE: Alternatively, you can clone the project and use npm start to run the program.
+
 
 A Google Chrome or Chromium browser will launch.
 
@@ -123,6 +126,23 @@ Pull requests are welcome. See the [ROADMAP](https://github.com/jamesmortensen/a
 
 For other ideas, please consider first opening an [issue](https://github.com/jamesmortensen/archiver-for-google-keep/issues) to discuss the idea. This increases the likelihood that the work is accepted.
 
+To run from the codebase, clone the project and then install node_modules:
+
+```bash
+$ npm install
+```
+
+Run the tests:
+
+```bash
+$ npm test
+```
+
+To run the application:
+
+```bash
+$ npm start
+```
 
 ## License
 

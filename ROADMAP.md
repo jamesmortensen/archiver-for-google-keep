@@ -14,12 +14,13 @@
 - [x] Refactoring
 - [x] Documentation and instructions
 - [x] Mocha unit tests
+- [x] Make it an executable binary (keep-archiver instead of npm start)
 - [x] Automate publishing process to NPM if tests succeed.
 - [x] Publish to NPM as v0.0.1 release
 
 ## Phase 3
 
-- [ ] Make it an executable binary (./keep.js instead of npm start) with options to specify output folder.
+- [ ] Add CLI options to specify different output folder.
 - [ ] Allow it to work with checked items. Currently, it only works with unchecked boxes.
 - [ ] Can we automate selecting labels?
 - [ ] Automate detecting page load. This may enable us to eliminate the prompt and hide the browser (running headlessly).
