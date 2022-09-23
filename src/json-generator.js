@@ -1,7 +1,6 @@
 // json-generator.js
 
-function generateJSON(card, filename, outputFolder = 'output') {
-    const fs = require('fs');
+function generateJSON(card) {
     return JSON.stringify(card);
 }
 

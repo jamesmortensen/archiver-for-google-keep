@@ -1,6 +1,8 @@
 // filename-generator.js
 
 function generateFilename(title, dateTimeNow) {
+    if(title === null || title === undefined)
+        title = '';
     let filename = title === ''
         ? 'untitled-' + dateTimeNow
         : title;

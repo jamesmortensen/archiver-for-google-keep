@@ -180,7 +180,7 @@ function writeCardsToOutputFolder(cards, outputFolder) {
         const filename = generateFilename(card.title);
         generators.forEach(({ generate, ext }) => {
             console.log(`Write ${filename}${ext}...`);
-            fs.writeFileSync(`${outputFolder}/${filename}${ext}`, generate(card, filename));
+            fs.writeFileSync(`${outputFolder}/${filename}${ext}`, generate(card));
             updateFileTimestamps(`${outputFolder}/${filename}${ext}`, card);
         });
     });

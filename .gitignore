@@ -3,3 +3,5 @@ node_modules
 devtools-data-dir
 webdriver-data-dir
 output
+build
+

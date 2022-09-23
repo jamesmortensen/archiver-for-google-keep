@@ -10,15 +10,15 @@
 
 ## Phase 2
 
+- [x] Can we automate the scrolling?
 - [x] Refactoring
 - [x] Documentation and instructions
+- [x] Mocha unit tests
+- [x] Automate publishing process to NPM if tests succeed.
 - [x] Publish to NPM as v0.0.1 release
 
 ## Phase 3
 
-- [ ] Mocha unit tests
-- [ ] Automate publishing process to NPM if tests succeed.
-- [x] Can we automate the scrolling?
 - [ ] Make it an executable binary (./keep.js instead of npm start) with options to specify output folder.
 - [ ] Allow it to work with checked items. Currently, it only works with unchecked boxes.
 - [ ] Can we automate selecting labels?
