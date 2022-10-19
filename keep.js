@@ -175,13 +175,16 @@ function writeCardsToOutputFolder(cards, outputFolder) {
     fs.mkdirSync(`${outputFolder}`);
     const generateFilename = require('./src/filename-generator.js');
     const generators = require('./generators.js');
+    const convertToMonthDateCommaYear = require('./src/card-date-parser.js');
+    const updateFileTimestamps = require('filesystem-timestamp-modifier');
 
     cards.forEach((card) => {
         const filename = generateFilename(card.title);
         generators.forEach(({ generate, ext }) => {
             console.log(`Write ${filename}${ext}...`);
             fs.writeFileSync(`${outputFolder}/${filename}${ext}`, generate(card));
-            updateFileTimestamps(`${outputFolder}/${filename}${ext}`, card);
+            const lastEditedDateStr = convertToMonthDateCommaYear(card.lastEditedTime.match('Edited (.*)')[1]);
+            updateFileTimestamps(`${outputFolder}/${filename}${ext}`, lastEditedDateStr);
         });
     });
 }
@@ -192,21 +195,4 @@ function parseBool(bool) {
         throw new Error('bool is not of type boolean or string');
     if (typeof bool == 'boolean') return bool;
     return bool.toLowerCase() === 'true' ? true : false;
-}
-
-function updateFileTimestamps(resourcePath, card) {
-    const lastEditedDateStr = card.lastEditedTime.match('Edited (.*)')[1];
-    const modifiedDateTime = new Date(
-        new Date(lastEditedDateStr).getTime() + 63000000
-    ).getTime() / 1000;
-    attachModifiedTimeAndCreatedTime(resourcePath, modifiedDateTime, modifiedDateTime);
-}
-
-function attachModifiedTimeAndCreatedTime(resourceName, modified, created) {
-    // https://nodejs.org/api/fs.html#fs_fspromises_lutimes_path_atime_mtime
-    // access time then modified time - modified is the important date shown in ls
-    // but it is actually access time that Quip is giving for modified time.
-    const fs = require('fs');
-    // to apply access times to files/folders
-    fs.utimesSync(`${resourceName}`, created, modified)
 }

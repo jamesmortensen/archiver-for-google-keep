@@ -32,15 +32,15 @@ function generateFilename(title, dateTimeNow) {
     return filename;
 }
 
-(function () {
+(function (func) {
     if (process.argv[1].match('mocha') === null)
         module.exports = function (title) {
-            return generateFilename(title, new Date().getTime());
+            return func(title, new Date().getTime());
         }
     else {
         console.warn('CLI loaded by mocha. Enable passing in dateTimeNow as 2nd argument...');
         module.exports = function (title, dateTimeNow) {
-            return generateFilename(title, dateTimeNow);
+            return func(title, dateTimeNow);
         }
     }
-})();
+})(generateFilename);
