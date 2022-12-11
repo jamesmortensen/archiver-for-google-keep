@@ -17,6 +17,8 @@ if(fs.existsSync('./output'))
         return;
     }
 
+    const startTimeInMillis = new Date().getTime();
+
     await scrollToBottom(browser);
     const cards = await scrapeCardsFromBrowser(browser);
     await browser.deleteSession();
@@ -24,7 +26,11 @@ if(fs.existsSync('./output'))
     const outputFolder = './output';
     writeCardsToOutputFolder(cards, outputFolder);
 
+    const stopTimeInMillis = new Date().getTime();
+    const totalTimeInSeconds = parseInt((stopTimeInMillis - startTimeInMillis) / 1000);
+
     console.log('Total cards processed: ' + cards.length);
+    console.log('Total processing time: ' + totalTimeInSeconds + ' seconds');
 })().catch((e) => console.error(e));
 
 
