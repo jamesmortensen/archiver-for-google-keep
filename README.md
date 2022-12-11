@@ -32,7 +32,9 @@ On the first run, you'll need to login to Google Keep with your credentials. Aft
 
 <img width="400" alt="sign-into-google-account" src="https://user-images.githubusercontent.com/1315816/191806069-64e47217-70ea-4a6c-9740-cc9ba7c5fd71.png">
 
-After logging in, as well as on subsequent runs, go back to the terminal, and you'll see a prompt:
+> NOTE: On subsequent runs, logging in shouldn't be necessary, unless you've deleted/corrupted the `devtools-data-dir` folder. 
+
+After logging in, as well as on subsequent runs, go back to the terminal, and you'll see a prompt with instructions:
 
 >      ATTENTION: Please follow these steps to export/backup your data
 >    1. Login to Google Keep
@@ -42,6 +44,8 @@ After logging in, as well as on subsequent runs, go back to the terminal, and yo
 > prompt: Continue with the backup? (Press ENTER):
 
 If you want to backup everything in Google Keep, just press ENTER. But if you only want to backup notes from a single label, first click on that label to load those cards, and then press ENTER.
+
+![google-keep-blur-screenshot](https://user-images.githubusercontent.com/1315816/206886947-0e5d4be8-0d1a-4d77-886d-e9ea30903ea7.png)
 
 You'll now observe WebdriverIO scroll all of the cards into view. In order to scrape the data, everything must be loaded on the page. 
 
