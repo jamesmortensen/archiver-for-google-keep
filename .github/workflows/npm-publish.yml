@@ -11,4 +11,6 @@ on:
 jobs:
   build:
     uses: jamesmortensen/npm-publish-workflow/.github/workflows/npm-publish-workflow.yml@main
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
 
