@@ -33,6 +33,16 @@ describe('Time Parser Tests', () => {
         expect(lastEditedDateStr).to.equal('Jul 6, 2022');
     });
 
+    it('should handle if the last edited time is yesterday', () => {
+        const lastEditedDateStr = convertToMonthDateCommaYear('yesterday, 3:03 PM', new Date('June 20, 2023'));
+        expect(lastEditedDateStr).to.equal('Jun 19, 2023');
+    });
+
+    it('should handle if the last edited time is the day before yesterday', () => {
+        const lastEditedDateStr = convertToMonthDateCommaYear('Jun 19', new Date('June 21, 2023'));
+        expect(lastEditedDateStr).to.equal('Jun 19, 2023');
+    });
+
     it('should throw Error if minute is invalid', () => {
         expect(
             () => convertToMonthDateCommaYear('10:2 AM', new Date('Jul 6, 2022'))

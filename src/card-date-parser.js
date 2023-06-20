@@ -13,6 +13,9 @@ function convertToMonthDateCommaYear(dateStr, dateTimeNow = new Date()) {
     else if (isMonthDateAndYear(response))
         return response[0];
 
+    else if(isYesterday(response))
+        return getMonthDateAndYear(new Date(new Date().setDate(dateTimeNow.getDate() - 1)));
+
     else if (isATime(response))
         return getMonthDateAndYear(dateTimeNow);
 }
@@ -23,6 +26,10 @@ function isMonthAndDate(response) {
 
 function isMonthDateAndYear(response) {
     return response[3] && response[4] && response[5];
+}
+
+function isYesterday(response) {
+    return response.input.split(', ')[0].toLowerCase() === 'yesterday';
 }
 
 function isATime(response) {

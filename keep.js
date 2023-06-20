@@ -144,7 +144,7 @@ async function scrapeCardsFromBrowser(browser) {
         }
         const timeElem = await browser.$('body > div.VIpgJd-TUo6Hb.XKSfm-L9AdLc.eo9XGd > div > div.IZ65Hb-TBnied > div.IZ65Hb-s2gQvd > div.IZ65Hb-jfdpUb > div.IZ65Hb-jfdpUb-fmcmS');
         const createdTime = await timeElem.getAttribute('data-tooltip-text');
-        const lastEditedTime = await timeElem.getText();
+        const lastEditedTime = (await timeElem.getText()).replace(/\u202f/, ' ');
         const color = await browser.execute(() => {
             return window.getComputedStyle(document.querySelector("body > div.VIpgJd-TUo6Hb.XKSfm-L9AdLc.eo9XGd > div > div.IZ65Hb-TBnied"), null).backgroundColor;
         });

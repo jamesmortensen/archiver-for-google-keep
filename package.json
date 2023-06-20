@@ -1,6 +1,6 @@
 {
   "name": "archiver-for-google-keep",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Scrapes notes and checklists from Google Keep™ and writes them out as JSON and markdown archive/backup files. This tool is not affiliated or endorsed by Google™. Google Keep™ is a trademark of Google.",
   "main": "keep.js",
   "bin": {
